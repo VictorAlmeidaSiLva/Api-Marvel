@@ -23,7 +23,11 @@ function App() {
       <center>
         {comics.map((comic) => {
           return(
-            <div key={comic.id}>{comic.title}</div>
+            <div key={comic.id}>
+              <div>{comic.title}</div>
+              <div>{comic.series.name}</div>
+              <img></img>
+            </div>
           )
         })}
       </center>
