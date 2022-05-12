@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import api from "./api";
-import md5 from "md5";
-import "./App.css";
 
 function App() {
   const [comics, setComics] = useState([]);
@@ -10,10 +8,12 @@ function App() {
     async function loadComics() {
       const response = await api.get("/v1/public/comics", {
         params: {
-          api_key: "e51b6f20392eb98fcfdf61a26a53c75d536762ff",
+          ts: 1,
+          apikey: "4bea33763caeb301c6e683dede9e63b9",
+          hash: "df7c7ce85d3e60046bd008a53b5cce3b"
         },
       });
-      setComics(response.data.results);
+      setComics(response.data.data.results);
     }
     loadComics();
   }, []);
@@ -21,9 +21,10 @@ function App() {
   return (
     <div>
       <center>
-        {comics.map((comics) => {
-          return
-          <div>{comics.id}</div>
+        {comics.map((comic) => {
+          return(
+            <div key={comic.id}>{comic.title}</div>
+          )
         })}
       </center>
     </div>
