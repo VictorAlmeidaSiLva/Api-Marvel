@@ -17,7 +17,7 @@ function App() {
       setComics(response.data.data.results);
     }
     loadComics();
-  }, [comics]);
+  }, []);
 
   return (
     <div>
