@@ -3,10 +3,11 @@ import api from "./api";
 
 function App() {
   const [comics, setComics] = useState([]);
+  const pic = '.jpg'
 
   useEffect(() => {
     async function loadComics() {
-      const response = await api.get("/v1/public/comics", {
+      const response = await api.get("/v1/public/events", {
         params: {
           ts: 1,
           apikey: "4bea33763caeb301c6e683dede9e63b9",
@@ -16,7 +17,7 @@ function App() {
       setComics(response.data.data.results);
     }
     loadComics();
-  }, []);
+  }, [comics]);
 
   return (
     <div>
@@ -25,8 +26,8 @@ function App() {
           return(
             <div key={comic.id}>
               <div>{comic.title}</div>
-              <div>{comic.series.name}</div>
-              <img></img>
+              <div>{comic.description}</div>
+              <img src={comic.thumbnail.path + pic}></img>
             </div>
           )
         })}
