@@ -1,10 +1,53 @@
+/* Topo do site */
 .topo{
   background-color: black;
   height: 200px;
   color: white;
+  background-image: url("backgroundMarvel.jpg");
 } 
+.letraA{
+ margin-inline-start: 30%;
+ color: white; 
+ font-family: 'Times New Roman', Times, serif;
+
+}
+/* Rodape do Site */
 .rodape{
     background-color: black;
     height: 100px;
     color: white;
+}
+/* Botão da Seleção */
+.botao{
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: blue;
+  border: black;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.botao:hover {background-color: red}
+
+.botao:active {
+  background-color: red;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.botaoComic {
+  height: 100px;
+}
+/* Home do Site */
+
+.fundoHome{
+  background-color: black;
+  background-image: url("MarvelLogo.png");
+}
+.letraB{
+  font-family: fantasy;
+  color: white;
 }

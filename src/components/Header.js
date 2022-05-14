@@ -8,7 +8,7 @@ function Header() {
                     <h1></h1>
                 </div>
                 <div className="col-4">
-                    <h1 className='titulo'>Mundo Marvel</h1>
+                    <h1 className='letraA'></h1>
                 </div>
                 <div className="col-4">
                     <h1></h1>

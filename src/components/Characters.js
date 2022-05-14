@@ -21,7 +21,7 @@ function Characters() {
     }, []);
   
     return (
-      <div>
+      <div className="letraB">
           {characters.map((characters) => {
             return(
               <div className="row" key={characters.id}>

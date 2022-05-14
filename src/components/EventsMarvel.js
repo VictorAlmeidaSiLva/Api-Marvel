@@ -21,7 +21,7 @@ function EventsMarvel() {
   }, []);
 
   return (
-    <div>
+    <div className="letraB">
         {comics.map((comic) => {
           return (
             <div className="row" key={comic.id}>

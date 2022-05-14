@@ -11,22 +11,22 @@ import Comics from "./components/Comics";
 
 function App() {
   return (
-    <div>
+    <div className="fundoHome">
       <Header></Header>
-      <div className="row">
-        <div className="col bEvents">
+      <div className=" row">
+        <div className="col botaoComic">
           <Link to='/Events'>
-            <button> Events </button>
+            <button className="botao"> Events </button>
           </Link>
         </div>
-        <div className="col bChar">
+        <div className="col botaoComic">
           <Link to='/Characters'>
-            <button> Characters </button>
+            <button className="botao"> Characters </button>
           </Link>
         </div>
-        <div className="col bComic">
+        <div className="col botaoComic">
           <Link to='/Comics'>
-            <button>Comics</button>
+            <button className="botao">Comics</button>
           </Link>
         </div>
       </div>
@@ -40,5 +40,6 @@ function App() {
 
   )
 }
+
 
 export default App;
