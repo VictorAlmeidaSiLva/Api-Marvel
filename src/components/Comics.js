@@ -1,37 +1,41 @@
 import React, { useEffect, useState } from "react";
 import api from "../api";
 
-function Characters() {
-    const [characters, setCharacters] = useState([]);
+function Comics() {
+    const [comics, setComics] = useState([]);
     const pic = '.jpg'
     const size = '/portrait_fantastic'
   
     useEffect(() => {
-      async function loadCharacters() {
-        const response = await api.get("/v1/public/characters", {
+      async function loadComics() {
+        const response = await api.get("/v1/public/comics", {
           params: {
             ts: 1,
             apikey: "537b30d15b5f4cc9f88ad94eacc97aee",
             hash: "0d1b28ff07637c55ee96465753be577f"
           },
         });
-        setCharacters(response.data.data.results);
+        setComics(response.data.data.results);
       }
-      loadCharacters();
+      loadComics();
     }, []);
   
     return (
       <div>
-          {characters.map((characters) => {
+          {comics.map((comic) => {
             return(
-              <div className="row" key={characters.id}>
+              <div className="row" key={comic.id}>
               <div className="col-6">
-                <h1><strong> {characters.name} </strong></h1>
-                <img src={characters.thumbnail.path + pic}></img>
+                <h1><strong> {comic.title} </strong></h1>
+                <img src={comic.thumbnail.path + pic}></img>
               </div>
               <div className="col-6 text">
                 <h3>
-                  {characters.description}
+                  {comic.description}
+                  <hr></hr>
+                  Pages:{comic.pageCount}
+                  <hr></hr>
+                  Serie: {comic.series.name}
                 </h3>
               </div>
             </div>
@@ -41,4 +45,4 @@ function Characters() {
     );
   }
 
-  export default Characters
+  export default Comics
