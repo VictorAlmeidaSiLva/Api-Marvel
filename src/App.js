@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="fundoHome">
       <Header></Header>
-      <div className=" row">
+      <div className=" row container">
         <div className="col botaoComic">
           <Link to='/Events'>
             <button className="botao"> Events </button>

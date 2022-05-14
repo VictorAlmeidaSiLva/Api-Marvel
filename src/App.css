@@ -34,12 +34,12 @@
 .botao:hover {background-color: red}
 
 .botao:active {
-  background-color: red;
+  background-color: green;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 .botaoComic {
-  height: 100px;
+  height: 200px;
 }
 /* Home do Site */
 
